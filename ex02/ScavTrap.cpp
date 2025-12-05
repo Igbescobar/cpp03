@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ScavTrap::ScavTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap("Default")
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	setHitPoints(100);
