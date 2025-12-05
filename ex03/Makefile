@@ -6,17 +6,17 @@
 #    By: igbescobar <igbescobar@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/24 16:57:39 by igbescobar        #+#    #+#              #
-#    Updated: 2025/12/05 13:07:25 by igbescobar       ###   ########.fr        #
+#    Updated: 2025/12/05 13:14:34 by igbescobar       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = DiamondTrap
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = obj
-SRC = ClapTrap.cpp ScavTrap.cpp main.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 all: $(NAME)
