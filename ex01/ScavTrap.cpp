@@ -7,9 +7,9 @@
 ScavTrap::ScavTrap() : ClapTrap("Default")
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
@@ -20,9 +20,9 @@ ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 /*
@@ -59,12 +59,12 @@ std::ostream &operator<<(std::ostream &o, ScavTrap const &i)
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (getEnergyPoints() <= 0)
+	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
 	{
 		std::cout << "ScavTrap " << getName() << " has no energy to attack!" << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << getName() << " attacks " << target << ",causing " << getAttackDamage() << " points of damage !" << std::endl;
+	std::cout << "ScavTrap " << getName() << " attacks " << target << ",causing " << getAttackDamage() << " points of damage!" << std::endl;
 	setEnergyPoints(getEnergyPoints() - 1);
 }
 

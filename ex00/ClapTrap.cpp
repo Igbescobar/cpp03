@@ -6,20 +6,20 @@
 
 ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "This is the default constructor!" << std::endl;
+	std::cout << "This is ClapTraps default constructor!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10),
 	_energyPoints(10), _attackDamage(0)
 {
-	std::cout << "This is the parameter constructor!" << std::endl;
+	std::cout << "This is ClapTrap " << name << " parameter constructor!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy) : _name(copy._name),
 	_hitPoints(copy._hitPoints), _energyPoints(copy._energyPoints),
 	_attackDamage(copy._attackDamage)
 {
-	std::cout << "This is the copy constructor!" << std::endl;
+	std::cout << "This is ClapTrap " << _name << " copy constructor!" << std::endl;
 }
 
 /*
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(ClapTrap const &copy) : _name(copy._name),
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "This is the deconstructor!" << std::endl;
+	std::cout << "This is ClapTraps deconstructor!" << std::endl;
 }
 
 /*
@@ -65,7 +65,7 @@ void ClapTrap::attack(const std::string &target)
 
 	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
 	{
-		std::cout << "ClapTrap " << this->getName() << " cannot do anything!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cannot attack!" << std::endl;
 		return ;
 	}
 	else
@@ -95,8 +95,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->getEnergyPoints() <= 0)
-		std::cout << this->getName() << " has no energy points" << std::endl;
+	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
+	{
+		std::cout << "ClapTrap " << this->getName() << " cannot be repaired!" << std::endl;
+		return ;
+	}
 	else
 	{
 		this->setHitPoints(this->getHitPoints() + amount);

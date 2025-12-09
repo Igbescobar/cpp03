@@ -4,22 +4,22 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "This is the default constructor!" << std::endl;
+	std::cout << "This is ClapTraps default constructor!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10),
 	_energyPoints(10), _attackDamage(0)
 {
-	std::cout << "This is the parameter constructor!" << std::endl;
+	std::cout << "This is ClapTrap " << name << " parameter constructor!" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy) : _name(copy._name),
 	_hitPoints(copy._hitPoints), _energyPoints(copy._energyPoints),
 	_attackDamage(copy._attackDamage)
 {
-	std::cout << "This is the copy constructor!" << std::endl;
+	std::cout << "This is ClapTrap " << _name << " copy constructor!" << std::endl;
 }
 
 /*
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(ClapTrap const &copy) : _name(copy._name),
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "This is the deconstructor!" << std::endl;
+	std::cout << "This is ClapTraps deconstructor!" << std::endl;
 }
 
 /*

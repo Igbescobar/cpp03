@@ -6,7 +6,7 @@
 #    By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/24 16:57:39 by igbescobar        #+#    #+#              #
-#    Updated: 2025/11/25 15:40:52 by igngonza         ###   ########.fr        #
+#    Updated: 2025/12/09 12:09:52 by igngonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = obj
-SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp Main.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 all: $(NAME)
